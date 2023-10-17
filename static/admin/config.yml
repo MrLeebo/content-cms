@@ -2,10 +2,26 @@ backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
 
+local_backend: true
+
 media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: 'tile'
+    label: 'Tile'
+    folder: 'content/tiles'
+    create: true
+    slug: 'index'
+    media_folder: ''
+    public_folder: ''
+    path: '{{title}}/index'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+
   - name: 'blog'
     label: 'Blog'
     folder: 'content/blog'
@@ -15,7 +31,7 @@ collections:
     public_folder: ''
     path: '{{title}}/index'
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }

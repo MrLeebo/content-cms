@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "content-cms",
   "private": true,
   "description": "A starter for a blog powered by Gatsby and Markdown",
   "version": "0.1.0",
@@ -28,22 +28,23 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "concurrently": "^8.2.1",
     "prettier": "^2.8.8"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/MrLeebo/content-cms",
   "keywords": [
     "gatsby"
   ],
   "license": "0BSD",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/MrLeebo/content-cms.git"
   },
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "npm run start",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "gatsby develop",
+    "start": "concurrently \"npx decap-server\" \"gatsby develop\"",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
